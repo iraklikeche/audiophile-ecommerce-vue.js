@@ -1,19 +1,13 @@
 <script setup>
 import data from "../data.json";
-// import hero from "../assets/product-xx99-mark-two-headphones/desktop/hero-image.jpg";
-// ./assets/product-xx99-mark-two-headphones/desktop/hero-image.jpg
 
 console.log(data[3].image.hero);
-
-const hero = data[3].image.hero;
-console.log(hero);
-// ./assets/product-yx1-earphones/desktop/image-product.jpg
 </script>
 
 <template>
   <div class="px-32">
-    <div class="grid grid-cols-3 items-center pt-6">
-      <div class="py-24 col-span-1">
+    <div class="grid grid-cols-2 items-center pt-6 gap-28">
+      <div class="py-24">
         <h4
           class="text-sm text-transform: uppercase tracking-[10px] font-medium text-white opacity-30"
         >
@@ -30,16 +24,22 @@ console.log(hero);
         </p>
         <div class="mt-16">
           <button
-            class="text-white text-xs bg-btnDefault py-3 px-6 tracking-[1px] font-bold"
+            class="text-white text-xs bg-btnDefault hover:opacity-70 py-3 px-6 tracking-[1px] font-bold transition-opacity"
           >
             SEE PRODUCT
           </button>
         </div>
       </div>
-      <div class="col-span-2">
-        <img :src="{ hero }" alt="hero" />
-      </div>
+      <div
+        class="custom-bg h-full bg-cover bg-center bg-no-repeat rounded-[10%]"
+      ></div>
     </div>
     <main></main>
   </div>
 </template>
+
+<style scoped>
+.custom-bg {
+  background-image: url("../assets//product-xx99-mark-two-headphones/desktop/hero-image.jpg");
+}
+</style>
