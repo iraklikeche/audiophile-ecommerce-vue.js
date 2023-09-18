@@ -2,6 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
+    extend: {
+      colors: {
+        btnDefault: "#D87D4A",
+      },
+    },
     container: {
       center: true,
     },

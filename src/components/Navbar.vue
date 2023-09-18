@@ -21,7 +21,7 @@
       </RouterLink>
 
       <div
-        class="flex gap-3 text-sm text-transform: uppercase font-bold text-white tracking-[1.5px]"
+        class="flex gap-6 text-sm text-transform: uppercase font-bold text-white tracking-[1.5px]"
       >
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">Headphones</RouterLink>
