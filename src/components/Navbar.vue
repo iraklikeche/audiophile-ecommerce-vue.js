@@ -1,5 +1,5 @@
 <template>
-  <header class="px-32">
+  <header class="px-32 bg-[#0E0E0E]">
     <nav
       class="flex items-center justify-between py-8 border-b border-gray-300 border-opacity border-opacity-20"
     >
