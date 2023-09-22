@@ -23,24 +23,14 @@
       <div
         class="flex gap-6 text-sm text-transform: uppercase font-bold text-white tracking-[1.5px]"
       >
-        <RouterLink class="hover:text-[#D87D4A] transition-colors" to="/"
-          >Home</RouterLink
-        >
-        <RouterLink
-          class="hover:text-[#D87D4A] transition-colors"
-          :to="{ name: 'category', params: { category: data[1].category } }"
-          >Headphones</RouterLink
-        >
-        <RouterLink
-          class="hover:text-[#D87D4A] transition-colors"
-          :to="{ name: 'category', params: { category: data[4].category } }"
-          >speakers</RouterLink
-        >
-        <RouterLink
-          class="hover:text-[#D87D4A] transition-colors"
-          :to="{ name: 'category', params: { category: data[0].category } }"
-          >earphones</RouterLink
-        >
+        <template v-for="(category, index) in uniqueCategories" :key="index">
+          <RouterLink
+            :to="category"
+            class="hover:text-[#D87D4A] transition-colors"
+          >
+            {{ category.params.category }}
+          </RouterLink>
+        </template>
       </div>
 
       <RouterLink to="/">
@@ -57,5 +47,26 @@
 </template>
 
 <script setup>
+import { ref, computed } from "vue";
 import data from "../data.json";
+
+const uniqueCategories = computed(() => {
+  const categoriesSet = new Set();
+  const uniqueCategoriesArray = [];
+
+  data.forEach((item) => {
+    if (!categoriesSet.has(item.category)) {
+      categoriesSet.add(item.category);
+      uniqueCategoriesArray.push({
+        name: "category",
+        params: { category: item.category },
+      });
+    }
+  });
+
+  return uniqueCategoriesArray;
+});
+
+console.log(uniqueCategories.value);
+console.log(data);
 </script>
