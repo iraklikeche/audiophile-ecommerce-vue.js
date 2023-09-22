@@ -26,13 +26,19 @@
         <RouterLink class="hover:text-[#D87D4A] transition-colors" to="/"
           >Home</RouterLink
         >
-        <RouterLink class="hover:text-[#D87D4A] transition-colors" to="/about"
+        <RouterLink
+          class="hover:text-[#D87D4A] transition-colors"
+          :to="{ name: 'category', params: { category: data[1].category } }"
           >Headphones</RouterLink
         >
-        <RouterLink class="hover:text-[#D87D4A] transition-colors" to="/about"
+        <RouterLink
+          class="hover:text-[#D87D4A] transition-colors"
+          :to="{ name: 'category', params: { category: data[4].category } }"
           >speakers</RouterLink
         >
-        <RouterLink class="hover:text-[#D87D4A] transition-colors" to="/about"
+        <RouterLink
+          class="hover:text-[#D87D4A] transition-colors"
+          :to="{ name: 'category', params: { category: data[0].category } }"
           >earphones</RouterLink
         >
       </div>
@@ -50,4 +56,6 @@
   </header>
 </template>
 
-<script setup></script>
+<script setup>
+import data from "../data.json";
+</script>
