@@ -1,23 +1,27 @@
 <template>
-  <!-- <div>
-    <h1>this is {{ category }}</h1>
-    <p>Hi {{ categoryData.name }}</p>
-  </div> -->
-  <div>
-    <h1>This is Category of {{ category }}</h1>
-    <!-- Display products for the selected category -->
-    <div v-for="product in categoryProducts" :key="product.id">
+  <div
+    class="flex justify-center items-center py-24 text-white bg-black tracking-[1px]"
+  >
+    <h1 class="text-5xl font-bold transform: uppercase">{{ category }}</h1>
+    <!-- <div v-for="product in categoryProducts" :key="product.id">
       <p>This is name product: {{ product.name }}</p>
-      <!-- Add other product details here -->
-    </div>
+    </div> -->
   </div>
+
+  <main>
+    <div class="px-32">
+      <GeneralProducts />
+      <LastSection />
+    </div>
+  </main>
 </template>
 
 <script setup>
 import { ref, computed, onBeforeMount, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
-import categoryData from "../data.json";
 import { useProductStore } from "../stores/Product.js";
+import LastSection from "../components/LastSection.vue";
+import GeneralProducts from "../components/GeneralProducts.vue";
 
 const route = useRoute();
 const category = computed(() => route.params.category);
@@ -37,17 +41,6 @@ watch(route, async () => {
     console.error("Error during watch:", error);
   }
 });
-
-// watch(route, async () => {
-//   try {
-//     categoryProducts.value = route.params.category;
-//     if (categoryProducts.value) {
-//       await getCategoryDataByName();
-//     }
-//   } catch (error) {
-//     console.error("Error during onMounted:", error);
-//   }
-// });
 
 onBeforeMount(() => {
   const categoryName = route.params.category;

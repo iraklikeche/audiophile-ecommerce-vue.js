@@ -1,4 +1,6 @@
 <script setup>
+import GeneralProducts from "../components/GeneralProducts.vue";
+import LastSection from "../components/LastSection.vue";
 import data from "../data.json";
 </script>
 
@@ -36,52 +38,7 @@ import data from "../data.json";
     </div>
   </section>
   <main>
-    <section class="general-products px-32 pt-48 pb-44">
-      <div class="container mx-auto my-0 flex gap-8">
-        <div
-          class="flex flex-col items-center justify-end pt-28 bg-[#f1f1f1] rounded-lg relative w-full"
-        >
-          <img
-            class="w-[200px] absolute bottom-[40%]"
-            src="../assets/shared/desktop/image-category-thumbnail-headphones.png"
-          />
-          <p class="text-transform: uppercase tracking-[1px] font-bold font-lg">
-            {{ data[3].category }}
-          </p>
-          <button class="my-4 text-sm font-bold opacity-50 tracking-[2px]">
-            SHOP
-          </button>
-        </div>
-        <div
-          class="flex flex-col items-center justify-end pt-16 bg-[#f1f1f1] rounded-lg relative w-full"
-        >
-          <img
-            class="w-[200px] absolute bottom-[40%]"
-            src="../assets/shared/desktop/image-category-thumbnail-speakers.png"
-          />
-          <p class="text-transform: uppercase tracking-[1px] font-bold text-lg">
-            {{ data[4].category }}
-          </p>
-          <button class="my-4 text-sm font-bold opacity-50 tracking-[2px]">
-            SHOP
-          </button>
-        </div>
-        <div
-          class="flex flex-col items-center justify-end pt-24 bg-[#f1f1f1] rounded-lg relative w-full"
-        >
-          <img
-            class="w-[200px] absolute bottom-[40%]"
-            src="../assets/shared/desktop/image-category-thumbnail-earphones.png"
-          />
-          <p class="text-transform: uppercase tracking-[1px] font-bold text-lg">
-            {{ data[0].category }}
-          </p>
-          <button class="my-4 text-sm font-bold opacity-50 tracking-[2px]">
-            SHOP
-          </button>
-        </div>
-      </div>
-    </section>
+    <GeneralProducts />
 
     <section class="product pb-32 px-32">
       <div
@@ -149,26 +106,7 @@ import data from "../data.json";
       </div>
     </section>
 
-    <section class="pb-32 px-32">
-      <div class="grid grid-cols-2 gap-40 items-center">
-        <div>
-          <h2 class="text-black transform: uppercase text-5xl font-bold">
-            Bringing you the <span class="text-[#D87D4A]">best</span> audio gear
-          </h2>
-          <p class="text-black font-medium opacity-50 mt-10 leading-7">
-            Located at the heart of New York City, Audiophile is the premier
-            store for high end headphones, earphones, speakers, and audio
-            accessories. We have a large showroom and luxury demonstration rooms
-            available for you to browse and experience a wide range of our
-            products. Stop by our store to meet some of the fantastic people who
-            make Audiophile the best place to buy your portable audio equipment.
-          </p>
-        </div>
-        <div>
-          <img src="../assets//shared/desktop/image-best-gear.jpg" />
-        </div>
-      </div>
-    </section>
+    <LastSection />
   </main>
 </template>
 
