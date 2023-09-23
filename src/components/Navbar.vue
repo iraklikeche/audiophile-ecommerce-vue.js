@@ -23,6 +23,11 @@
       <div
         class="flex gap-6 text-sm text-transform: uppercase font-bold text-white tracking-[1.5px]"
       >
+        <RouterLink
+          :to="{ name: 'home' }"
+          class="hover:text-[#D87D4A] transition-colors"
+          >Home</RouterLink
+        >
         <template v-for="(category, index) in uniqueCategories" :key="index">
           <RouterLink
             :to="category"
