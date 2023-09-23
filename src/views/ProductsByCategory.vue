@@ -11,15 +11,19 @@
   <main>
     <div class="px-32">
       <div
-        v-for="product in categoryProducts"
+        v-for="(product, index) in categoryProducts"
         :key="product.id"
         class="grid grid-cols-2 pt-28 pb-12 gap-36 items-center justify-center"
       >
-        <div>
+        <div
+          :class="{ 'order-1': index % 2 === 0, 'order-2': index % 2 !== 0 }"
+        >
           <img :src="product.categoryImage.desktop" alt="123" />
-          {{ product.categoryImage.desktop }}
         </div>
-        <div class="flex flex-col gap-4">
+        <div
+          class="flex flex-col gap-4"
+          :class="{ 'order-2': index % 2 === 0, 'order-1': index % 2 !== 0 }"
+        >
           <h3
             class="text-[#D87D4A] font-medium text-base transform: uppercase tracking-[10px]"
           >
