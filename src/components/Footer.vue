@@ -86,7 +86,5 @@
 </template>
 
 <script setup>
-import Navbar from "./Navbar.vue";
 const currentYear = new Date().getFullYear();
-import fb from "../assets/shared/desktop/icon-facebook.svg";
 </script>

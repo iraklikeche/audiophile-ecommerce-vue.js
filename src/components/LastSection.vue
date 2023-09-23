@@ -15,7 +15,7 @@
         </p>
       </div>
       <div>
-        <img src="../assets//shared/desktop/image-best-gear.jpg" />
+        <img src="../../public/assets//shared/desktop/image-best-gear.jpg" />
       </div>
     </div>
   </section>

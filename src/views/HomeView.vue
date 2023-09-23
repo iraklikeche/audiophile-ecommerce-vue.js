@@ -45,7 +45,7 @@ import data from "../data.json";
         class="container bg-[#D87D4A] grid grid-cols-2 gap-20 rounded-lg px-20"
       >
         <div class="flex justify-center">
-          <img src="../assets/bg-1.png" class="pt-16" />
+          <img src="../../public/assets/bg-1.png" class="pt-16" />
         </div>
         <div class="flex flex-col justify-center gap-6 pr-32">
           <h2
@@ -85,7 +85,7 @@ import data from "../data.json";
       <div class="grid grid-cols-2 gap-12 mt-12 rounded-lg">
         <div>
           <img
-            src="../assets/product-yx1-earphones/desktop/image-gallery-2.jpg"
+            src="../../public/assets/product-yx1-earphones/desktop/image-gallery-2.jpg"
             class="rounded-lg w-full"
           />
         </div>
@@ -112,10 +112,10 @@ import data from "../data.json";
 
 <style scoped>
 .custom-bg {
-  background-image: url("../assets//product-xx99-mark-two-headphones/desktop/hero-image.jpg");
+  background-image: url("../../public/assets//product-xx99-mark-two-headphones/desktop/hero-image.jpg");
 }
 
 .bg-1 {
-  background-image: url("../assets//Bitmap.png");
+  background-image: url("../../public/assets//Bitmap.png");
 }
 </style>

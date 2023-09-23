@@ -6,7 +6,7 @@
       >
         <img
           class="w-[200px] absolute bottom-[40%]"
-          src="../assets/shared/desktop/image-category-thumbnail-headphones.png"
+          src="../../public/assets/shared/desktop/image-category-thumbnail-headphones.png"
         />
         <p class="text-transform: uppercase tracking-[1px] font-bold font-lg">
           {{ data[3].category }}
@@ -20,7 +20,7 @@
       >
         <img
           class="w-[200px] absolute bottom-[40%]"
-          src="../assets/shared/desktop/image-category-thumbnail-speakers.png"
+          src="../../public/assets/shared/desktop/image-category-thumbnail-speakers.png"
         />
         <p class="text-transform: uppercase tracking-[1px] font-bold text-lg">
           {{ data[4].category }}
@@ -34,7 +34,7 @@
       >
         <img
           class="w-[200px] absolute bottom-[40%]"
-          src="../assets/shared/desktop/image-category-thumbnail-earphones.png"
+          src="../../public/assets/shared/desktop/image-category-thumbnail-earphones.png"
         />
         <p class="text-transform: uppercase tracking-[1px] font-bold text-lg">
           {{ data[0].category }}

@@ -66,7 +66,4 @@ const uniqueCategories = computed(() => {
 
   return uniqueCategoriesArray;
 });
-
-console.log(uniqueCategories.value);
-console.log(data);
 </script>
