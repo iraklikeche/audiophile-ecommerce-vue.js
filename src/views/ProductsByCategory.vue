@@ -3,9 +3,6 @@
     class="flex justify-center items-center py-24 text-white bg-[#000] tracking-[1px]"
   >
     <h1 class="text-5xl font-bold transform: uppercase">{{ category }}</h1>
-    <!-- <div v-for="product in categoryProducts" :key="product.id">
-      <p>This is name product: {{ product.name }}</p>
-    </div> -->
   </div>
 
   <main>
@@ -52,10 +49,8 @@ watch(route, async () => {
 onBeforeMount(() => {
   const categoryName = route.params.category;
   const dataForCategory = categoryStore.getCategoryDataByName(categoryName);
-
   if (dataForCategory) {
     categoryProducts.value = dataForCategory;
-    console.log(categoryProducts.value);
   } else {
     // Handle the case where data for the selected category doesn't exist
     console.warn(`Data for category '${categoryName}' not found.`);
