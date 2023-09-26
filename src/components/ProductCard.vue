@@ -18,6 +18,18 @@
       <p class="text-black opacity-50 font-sm font-medium leading-6">
         {{ product.description }}
       </p>
+
+      <div v-if="showAddToCart">
+        <span class="tracking-widest">$ {{ product.price }}</span>
+        <div class="flex gap-5">
+          <input type="number" class="bg-[#f1f1f1] pl-2" placeholder="0" />
+          <button
+            class="text-white text-xs bg-btnDefault hover:opacity-70 py-3 px-6 tracking-[1px] font-bold transition-opacity transform: uppercase"
+          >
+            Add to cart
+          </button>
+        </div>
+      </div>
       <div class="mt-4">
         <button
           @click="seeProductDetails(product)"
@@ -32,6 +44,7 @@
 
 <script setup>
 import { useRouter } from "vue-router";
+import { ref } from "vue";
 
 const router = useRouter();
 
@@ -39,6 +52,7 @@ const props = defineProps({
   product: Object,
   index: Number,
   categoryProducts: Array,
+  showAddToCart: Boolean,
 });
 
 const seeProductDetails = (productId) => {
@@ -47,6 +61,5 @@ const seeProductDetails = (productId) => {
     name: "product",
     params: { product: productId.id },
   });
-  console.log(productId.id);
 };
 </script>

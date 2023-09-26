@@ -15,7 +15,10 @@
         </p>
       </div>
       <div>
-        <img src="../../public/assets//shared/desktop/image-best-gear.jpg" />
+        <img
+          src="../../public/assets//shared/desktop/image-best-gear.jpg"
+          class="hover:scale-110 transition-all duration-500"
+        />
       </div>
     </div>
   </section>

@@ -1,33 +1,79 @@
 <template>
-  <h1>Hello World</h1>
-  <div class="container mx-auto mt-10">
-    <h1 class="text-3xl font-semibold">{{ product.name }}</h1>
-    <img
-      :src="product.categoryImage.desktop"
-      alt="Product Image"
-      class="mt-4"
+  <div v-if="product" class="px-32">
+    <ProductCard
+      :key="product.id"
+      :product="product"
+      :index="index"
+      :categoryProducts="[product]"
+      :showAddToCart="true"
     />
-    <p class="mt-4">{{ product.description }}</p>
+
+    <div class="my-32 grid grid-cols-4">
+      <div class="col-span-3 pr-36">
+        <h3 class="font-bold text-4xl transform: uppercase tracking-wider">
+          Features
+        </h3>
+        <p class="text-black opacity-50 font-medium text-base mt-10 leading-7">
+          {{ product.features }}
+        </p>
+      </div>
+      <div class="col-span-1">
+        <h3 class="font-bold text-4xl transform: uppercase tracking-wider">
+          In the box
+        </h3>
+        <ul class="mt-10 flex flex-col gap-4">
+          <li v-for="item in product.includes" class="flex items-center gap-8">
+            <span class="text-[#D87D4A] text-base">{{ item.quantity }}x</span>
+            <span class="text-black opacity-50">{{ item.item }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-32 flex gap-10">
+      <div class="flex flex-col gap-10">
+        <img
+          :src="product.gallery.first.desktop"
+          class="rounded-lg hover:scale-110 transition-all duration-500"
+        />
+        <img
+          :src="product.gallery.second.desktop"
+          class="rounded-lg hover:scale-110 transition-all duration-500"
+        />
+      </div>
+      <img
+        :src="product.gallery.third.desktop"
+        class="rounded-lg hover:scale-110 transition-all duration-500"
+      />
+    </div>
+
+    <GeneralProducts />
+
+    <LastSection />
   </div>
+
+  <div v-else>...Loading</div>
 </template>
 
 <script setup>
 import { useRoute } from "vue-router";
 import { useProductStore } from "../stores/Product.js";
 import { ref, onBeforeMount } from "vue";
+import ProductCard from "../components/ProductCard.vue";
+import GeneralProducts from "../components/GeneralProducts.vue";
+import LastSection from "../components/LastSection.vue";
 
 const route = useRoute();
 
 const productStore = useProductStore();
 const product = ref(null);
+let index = 0;
 
 onBeforeMount(async () => {
   const productId = route.params.product;
   const productData = await productStore.getProductById(productId);
-
   if (productData) {
     product.value = productData;
-    console.log(product.value);
   } else {
     // Handle the case where product data is not found
     console.warn(`Product '${productId}' not found.`);
