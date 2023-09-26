@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 pt-28 pb-12 gap-36 items-center justify-center">
+  <div class="grid grid-cols-2 pb-12 gap-36 items-center justify-center">
     <div :class="{ 'order-1': index % 2 === 0, 'order-2': index % 2 !== 0 }">
       <img :src="product.categoryImage.desktop" alt="123" />
     </div>

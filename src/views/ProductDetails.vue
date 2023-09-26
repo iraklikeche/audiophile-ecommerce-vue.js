@@ -1,4 +1,7 @@
 <template>
+  <div class="px-32 pt-20 pb-10">
+    <GoBackButton />
+  </div>
   <div v-if="product" class="px-32">
     <ProductCard
       :key="product.id"
@@ -62,6 +65,7 @@ import { ref, onBeforeMount } from "vue";
 import ProductCard from "../components/ProductCard.vue";
 import GeneralProducts from "../components/GeneralProducts.vue";
 import LastSection from "../components/LastSection.vue";
+import GoBackButton from "../components/GoBackButton.vue";
 
 const route = useRoute();
 
