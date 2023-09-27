@@ -5,6 +5,18 @@ import data from "../data.json";
 export const useProductStore = defineStore("product", () => {
   const productData = ref(data);
 
+  const cart = ref([]);
+  const productIndex = computed(() => cart.value.length);
+
+  const addItemToCart = (product) => {
+    cart.value.push(product);
+    console.log(cart.value);
+  };
+
+  const getCart = computed(() => cart.value);
+
+  // const cartItems = computed(() => cart.value.length);
+
   const getCategoryDataByName = (categoryName) => {
     return productData.value.filter((item) => item.category === categoryName);
   };
@@ -23,5 +35,8 @@ export const useProductStore = defineStore("product", () => {
     productData,
     getCategoryDataByName,
     getProductById,
+    productIndex,
+    addItemToCart,
+    getCart,
   };
 });

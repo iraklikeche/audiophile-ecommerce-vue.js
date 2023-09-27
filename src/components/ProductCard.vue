@@ -24,6 +24,7 @@
         <div class="flex gap-5 mt-4">
           <input type="number" class="bg-[#f1f1f1] pl-2" placeholder="0" />
           <button
+            @click="addToCart(product)"
             class="text-white text-xs bg-btnDefault hover:opacity-70 py-3 px-6 tracking-[1px] font-bold transition-opacity transform: uppercase"
           >
             Add to cart
@@ -45,8 +46,19 @@
 
 <script setup>
 import { useRouter } from "vue-router";
+import { useProductStore } from "../stores/Product";
 
 const router = useRouter();
+const productStore = useProductStore();
+
+const addToCart = (product) => {
+  productStore.addItemToCart({
+    id: product.id,
+    image: product.image.desktop,
+    name: product.name,
+    price: product.price,
+  });
+};
 
 const props = defineProps({
   product: Object,
@@ -56,6 +68,7 @@ const props = defineProps({
 });
 
 const seeProductDetails = (productId) => {
+  console.log(productId.id);
   // Use Vue Router to navigate to the ProductDetails page
   router.push({
     name: "product",
