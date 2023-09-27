@@ -21,7 +21,7 @@
 
       <div v-if="showAddToCart">
         <span class="tracking-widest">$ {{ product.price }}</span>
-        <div class="flex gap-5">
+        <div class="flex gap-5 mt-4">
           <input type="number" class="bg-[#f1f1f1] pl-2" placeholder="0" />
           <button
             class="text-white text-xs bg-btnDefault hover:opacity-70 py-3 px-6 tracking-[1px] font-bold transition-opacity transform: uppercase"
@@ -32,6 +32,7 @@
       </div>
       <div class="mt-4">
         <button
+          v-if="!showAddToCart"
           @click="seeProductDetails(product)"
           class="text-white text-xs bg-btnDefault hover:opacity-70 py-3 px-6 tracking-[1px] font-bold transition-opacity"
         >
@@ -44,7 +45,6 @@
 
 <script setup>
 import { useRouter } from "vue-router";
-import { ref } from "vue";
 
 const router = useRouter();
 

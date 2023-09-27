@@ -3,10 +3,10 @@ import { defineStore } from "pinia";
 import data from "../data.json";
 
 export const useProductStore = defineStore("product", () => {
-  const categoryData = ref(data);
+  const productData = ref(data);
 
   const getCategoryDataByName = (categoryName) => {
-    return categoryData.value.filter((item) => item.category === categoryName);
+    return productData.value.filter((item) => item.category === categoryName);
   };
   const getProductById = (id) => {
     // console.log("Searching for product with id:", id);
@@ -15,12 +15,12 @@ export const useProductStore = defineStore("product", () => {
     const productId = parseInt(id);
 
     // Use find to search for the product by id
-    const product = categoryData.value.find((item) => item.id === productId);
+    const product = productData.value.find((item) => item.id === productId);
     return product;
   };
 
   return {
-    categoryData,
+    productData,
     getCategoryDataByName,
     getProductById,
   };
