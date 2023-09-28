@@ -70,6 +70,7 @@ const addToCart = (product) => {
     // If the item is not in the cart, add it as a new entry
     productStore.addItemToCart({
       id: product.id,
+      slug: product.slug,
       image: product.image.desktop,
       name: product.name,
       price: product.price,

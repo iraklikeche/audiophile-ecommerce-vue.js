@@ -105,11 +105,13 @@
             >
           </div>
 
-          <button
-            class="bg-[#D87D4A] mt-4 px-8 py-3 transform: uppercase tracking-wider text-white text-xs hover:opacity-70 transition-opacity"
-          >
-            Checkout
-          </button>
+          <RouterLink :to="{ name: 'checkout' }">
+            <button
+              class="w-full bg-[#D87D4A] mt-4 px-8 py-3 transform: uppercase tracking-wider text-white text-xs hover:opacity-70 transition-opacity"
+            >
+              Checkout
+            </button>
+          </RouterLink>
         </div>
       </div>
     </nav>
@@ -128,7 +130,6 @@ const cart = productStore.getCart;
 console.log(cart);
 
 const showCart = ref(false);
-// const quantity = ref(0);
 
 const openCart = () => {
   if (cart.length > 0) {

@@ -20,6 +20,11 @@ export const useProductStore = defineStore("product", () => {
       return total + item.price * item.quantity;
     }, 0);
   });
+  const totalPriceCheckout = computed(() => {
+    return cart.value.reduce((total, item) => {
+      return total + item.price * item.quantity + 50;
+    }, 0);
+  });
 
   // const cartItems = computed(() => cart.value.length);
 
@@ -45,5 +50,6 @@ export const useProductStore = defineStore("product", () => {
     addItemToCart,
     getCart,
     totalPrice,
+    totalPriceCheckout,
   };
 });
