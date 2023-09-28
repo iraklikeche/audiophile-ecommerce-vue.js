@@ -15,6 +15,12 @@ export const useProductStore = defineStore("product", () => {
 
   const getCart = computed(() => cart.value);
 
+  const totalPrice = computed(() => {
+    return cart.value.reduce((total, item) => {
+      return total + item.price * item.quantity;
+    }, 0);
+  });
+
   // const cartItems = computed(() => cart.value.length);
 
   const getCategoryDataByName = (categoryName) => {
@@ -38,5 +44,6 @@ export const useProductStore = defineStore("product", () => {
     productIndex,
     addItemToCart,
     getCart,
+    totalPrice,
   };
 });

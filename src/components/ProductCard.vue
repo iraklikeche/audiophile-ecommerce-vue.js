@@ -22,7 +22,12 @@
       <div v-if="showAddToCart">
         <span class="tracking-widest">$ {{ product.price }}</span>
         <div class="flex gap-5 mt-4">
-          <input type="number" class="bg-[#f1f1f1] pl-2" placeholder="0" />
+          <input
+            type="number"
+            class="bg-[#f1f1f1] pl-2"
+            placeholder="0"
+            v-model="quantity"
+          />
           <button
             @click="addToCart(product)"
             class="text-white text-xs bg-btnDefault hover:opacity-70 py-3 px-6 tracking-[1px] font-bold transition-opacity transform: uppercase"
@@ -47,17 +52,30 @@
 <script setup>
 import { useRouter } from "vue-router";
 import { useProductStore } from "../stores/Product";
+import { ref } from "vue";
 
 const router = useRouter();
 const productStore = useProductStore();
+const quantity = ref(1);
 
 const addToCart = (product) => {
-  productStore.addItemToCart({
-    id: product.id,
-    image: product.image.desktop,
-    name: product.name,
-    price: product.price,
-  });
+  const existingItem = productStore.getCart.find(
+    (item) => item.id === product.id
+  );
+
+  if (existingItem) {
+    // If the item already exists in the cart, increment its quantity
+    existingItem.quantity += quantity.value;
+  } else {
+    // If the item is not in the cart, add it as a new entry
+    productStore.addItemToCart({
+      id: product.id,
+      image: product.image.desktop,
+      name: product.name,
+      price: product.price,
+      quantity: quantity.value,
+    });
+  }
 };
 
 const props = defineProps({
