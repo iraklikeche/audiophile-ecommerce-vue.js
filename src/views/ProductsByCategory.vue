@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex justify-center items-center py-24 text-white bg-[#000] tracking-[1px]"
+    class="flex justify-center items-center py-24 text-white bg-[#000] tracking-[1px] mb-32"
   >
     <h1 class="text-5xl font-bold transform: uppercase">{{ category }}</h1>
   </div>
