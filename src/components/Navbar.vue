@@ -1,7 +1,10 @@
 <template>
   <header class="px-32 bg-[#0E0E0E]">
     <nav
-      class="flex items-center justify-between py-8 border-b border-gray-300 border-opacity border-opacity-20"
+      :class="{
+        'border-b border-gray-300 border-opacity border-opacity-20': hasBorder,
+      }"
+      class="flex items-center justify-between py-8"
     >
       <RouterLink :to="{ name: 'home' }">
         <svg
@@ -38,7 +41,8 @@
         </template>
       </div>
 
-      <div class="relative">
+      <slot></slot>
+      <!-- <div class="relative">
         <div class="flex relative">
           <svg
             width="23"
@@ -113,7 +117,7 @@
             </button>
           </RouterLink>
         </div>
-      </div>
+      </div> -->
     </nav>
   </header>
 </template>
@@ -129,16 +133,14 @@ const productStore = useProductStore();
 const cart = productStore.getCart;
 console.log(cart);
 
-const showCart = ref(false);
+const props = defineProps({
+  hasBorder: {
+    type: Boolean,
+    default: true,
+  },
+});
 
-const openCart = () => {
-  if (cart.length > 0) {
-    showCart.value = !showCart.value;
-    console.log("you've added item to cart");
-  } else {
-    alert("cart is empty");
-  }
-};
+const showCart = ref(false);
 
 const route = useRoute();
 
