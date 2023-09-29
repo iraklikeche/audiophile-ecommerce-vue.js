@@ -486,7 +486,7 @@
       "third": {
         "mobile": "../../public/assets/product-zx9-speaker/mobile/image-gallery-3.jpg",
         "tablet": "../../public/assets/product-zx9-speaker/tablet/image-gallery-3.jpg",
-        "desktop": "./assets/product-zx9-speaker/desktop/image-gallery-3.jpg"
+        "desktop": "../../public/assets/product-zx9-speaker/desktop/image-gallery-3.jpg"
       }
     },
     "others": [

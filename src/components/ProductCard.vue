@@ -37,13 +37,14 @@
         </div>
       </div>
       <div class="mt-4">
-        <button
+        <SeeProductDetails v-if="!showAddToCart" :product-id="product.id" />
+        <!-- <button
           v-if="!showAddToCart"
           @click="seeProductDetails(product)"
           class="text-white text-xs bg-btnDefault hover:opacity-70 py-3 px-6 tracking-[1px] font-bold transition-opacity"
         >
           SEE PRODUCT
-        </button>
+        </button> -->
       </div>
     </div>
   </div>
@@ -53,6 +54,7 @@
 import { useRouter } from "vue-router";
 import { useProductStore } from "../stores/Product";
 import { ref } from "vue";
+import SeeProductDetails from "./SeeProductDetails.vue";
 
 const router = useRouter();
 const productStore = useProductStore();

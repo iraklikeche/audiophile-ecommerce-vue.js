@@ -1,7 +1,20 @@
 <script setup>
 import GeneralProducts from "../components/GeneralProducts.vue";
 import LastSection from "../components/LastSection.vue";
+import SeeProductDetails from "../components/SeeProductDetails.vue";
 import data from "../data.json";
+
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const seeProductDetails = (productId) => {
+  // Use Vue Router to navigate to the ProductDetails page
+  router.push({
+    name: "product",
+    params: { product: productId },
+  });
+};
 </script>
 
 <template>
@@ -25,11 +38,16 @@ import data from "../data.json";
           for the passionate music enthusiast.
         </p>
         <div class="mt-16">
-          <button
+          <SeeProductDetails
+            :productId="data[3].id"
+            :isBlackBackground="false"
+          />
+          <!-- <button
+            @click="seeProductDetails(data[3].id)"
             class="text-white text-xs bg-btnDefault hover:opacity-70 py-3 px-6 tracking-[1px] font-bold transition-opacity"
           >
             SEE PRODUCT
-          </button>
+          </button> -->
         </div>
       </div>
       <div
@@ -59,11 +77,10 @@ import data from "../data.json";
           </p>
 
           <div class="mt-6">
-            <button
-              class="bg-[#000] hover:bg-[#4C4C4C] transition-colors text-white text-[14px] font-bold tracking-[1px] transform: uppercase px-8 py-4"
-            >
-              See Product
-            </button>
+            <SeeProductDetails
+              :productId="data[5].id"
+              :isBlackBackground="true"
+            />
           </div>
         </div>
       </div>
@@ -74,11 +91,10 @@ import data from "../data.json";
           <h2 class="text-3xl font-bold transform: uppercase tracking-[2px]">
             {{ data[4].name }}
           </h2>
-          <button
-            class="bg-[#000] hover:bg-[#4C4C4C] transition-colors text-white text-[14px] font-bold tracking-[1px] transform: uppercase px-8 py-4"
-          >
-            See Product
-          </button>
+          <SeeProductDetails
+            :productId="data[4].id"
+            :isBlackBackground="true"
+          />
         </div>
       </div>
 
@@ -96,11 +112,10 @@ import data from "../data.json";
             {{ data[0].name.replace(" Wireless", "") }}
           </h2>
           <div>
-            <button
-              class="bg-[#000] hover:bg-[#4C4C4C] transition-colors text-white text-[14px] font-bold tracking-[1px] transform: uppercase px-8 py-4"
-            >
-              See Product
-            </button>
+            <SeeProductDetails
+              :productId="data[0].id"
+              :isBlackBackground="true"
+            />
           </div>
         </div>
       </div>
