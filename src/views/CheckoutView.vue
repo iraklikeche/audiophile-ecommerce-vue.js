@@ -231,10 +231,7 @@
         </div>
       </div>
     </form>
-    <!-- </div> -->
 
-    <!-- Summary -->
-    <!-- </div> -->
     <Modal :modalActive="modalActive" @close-modal="toggleModal" />
   </div>
 </template>
@@ -317,15 +314,6 @@ const submitForm = () => {
     alert(`Please fill the following fields correctly: ${invalidFieldNames}`);
     console.log(`Invalid fields: ${invalidFieldNames}`);
   }
-};
 
-// const submitForm = () => {
-//   if (Object.values(validationResults).every((result) => result)) {
-//     console.log("All inputs filled correctly:", formData.value);
-//     toggleModal();
-//   } else {
-//     alert("Please fill all required fields");
-//     console.log("Some inputs are not correct.");
-//   }
-// };
+};
 </script>

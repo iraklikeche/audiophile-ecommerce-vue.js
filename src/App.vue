@@ -8,7 +8,6 @@ import { ref, watch } from "vue";
 const productStore = useProductStore();
 const cart = productStore.getCart;
 const route = useRoute();
-console.log(cart);
 const showCart = ref(false);
 
 const openCart = () => {

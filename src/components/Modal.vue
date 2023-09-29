@@ -47,7 +47,7 @@
             <RouterLink :to="{ name: 'home' }">
               <button
                 class="w-full bg-[#D87D4A] text-white mt-8 bg-weather-primary py-4 transform: uppercase"
-                @click="$emit('close-modal')"
+                @click="$emit('close-modal'), productStore.clearCart()"
               >
                 Back To Home
               </button>

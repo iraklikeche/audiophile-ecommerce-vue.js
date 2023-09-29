@@ -42,6 +42,10 @@ export const useProductStore = defineStore("product", () => {
     return product;
   };
 
+  const clearCart = () => {
+    cart.value = [];
+  };
+
   return {
     productData,
     getCategoryDataByName,
@@ -51,5 +55,6 @@ export const useProductStore = defineStore("product", () => {
     getCart,
     totalPrice,
     totalPriceCheckout,
+    clearCart,
   };
 });
