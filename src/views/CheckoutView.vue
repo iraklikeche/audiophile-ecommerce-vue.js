@@ -18,7 +18,12 @@
           <div class="grid grid-cols-2 gap-8 mb-16">
             <div class="flex flex-col gap-2">
               <label class="font-bold">Name</label>
-              <input class="border p-4 rounded-lg" type="text" placeholder="" />
+              <input
+                class="border p-4 rounded-lg"
+                type="text"
+                placeholder="Andrew Jones"
+                required
+              />
             </div>
 
             <div class="flex flex-col gap-2">
@@ -27,12 +32,18 @@
               <input
                 class="border p-4 rounded-lg"
                 type="email"
-                placeholder=""
+                placeholder="anrew@gmail.com"
+                required
               />
             </div>
             <div class="flex flex-col gap-2">
               <label class="font-bold">Phone Number</label>
-              <input class="border p-4 rounded-lg" type="text" placeholder="" />
+              <input
+                class="border p-4 rounded-lg"
+                type="text"
+                placeholder="+995 555 555 555"
+                required
+              />
             </div>
           </div>
 
@@ -47,22 +58,38 @@
             <input
               class="w-full border p-4 rounded-lg"
               type="text"
-              placeholder=""
+              placeholder="110 Rustaveli Avenue"
+              required
             />
           </div>
           <div class="grid grid-cols-2 gap-8 mb-16">
             <div class="flex flex-col gap-2">
               <label class="font-bold">Zip Code</label>
-              <input class="border p-4 rounded-lg" type="number" />
+              <input
+                class="border p-4 rounded-lg"
+                type="number"
+                placeholder="6000"
+                required
+              />
             </div>
 
             <div class="flex flex-col gap-2">
               <label class="font-bold">City</label>
-              <input class="border p-4 rounded-lg" type="text" />
+              <input
+                class="border p-4 rounded-lg"
+                type="text"
+                placeholder="London"
+                required
+              />
             </div>
             <div class="flex flex-col gap-2 mb-8">
               <label class="font-bold">Country</label>
-              <input class="border p-4 rounded-lg" type="text" />
+              <input
+                class="border p-4 rounded-lg"
+                type="text"
+                placeholder="UK"
+                required
+              />
             </div>
           </div>
 
@@ -78,7 +105,7 @@
             <div class="flex flex-col gap-6">
               <div
                 class="flex gap-2 border p4 rounded-lg p-4 cursor-pointer"
-                @click="handleDivClick(eMoneyRadio)"
+                @click="handleDivClick('eMoneyRadio')"
               >
                 <input
                   type="radio"
@@ -87,6 +114,7 @@
                   value="e-money"
                   checked
                   ref="eMoneyRadio"
+                  required
                 />
                 <label for="e-money">e-money</label>
               </div>
@@ -101,6 +129,7 @@
                   name="drone"
                   value="cash on Delivery"
                   ref="cashOnDeliveryRadio"
+                  required
                 />
                 <label for="cash on Delivery">Cash on Delivery</label>
               </div>
@@ -110,11 +139,21 @@
           <div class="grid grid-cols-2 gap-8">
             <div class="flex flex-col">
               <label>e-Money Number</label>
-              <input class="w-full border p-4 rounded-lg" type="text" />
+              <input
+                class="w-full border p-4 rounded-lg"
+                type="text"
+                placeholder="467432947"
+                required
+              />
             </div>
             <div class="flex flex-col">
               <label>e-Money PIN</label>
-              <input class="w-full border p-4 rounded-lg" type="number" />
+              <input
+                class="w-full border p-4 rounded-lg"
+                type="number"
+                placeholder="6823"
+                required
+              />
             </div>
           </div>
         </form>
@@ -171,6 +210,8 @@
           </div>
 
           <button
+            @click="toggleModal"
+            type="submit"
             class="w-full bg-[#D87D4A] font-bold mt-4 px-8 py-4 transform: uppercase tracking-wider text-white text-xs hover:opacity-70 transition-opacity"
           >
             Continue & Pay
@@ -178,15 +219,21 @@
         </div>
       </div>
     </div>
+    <Modal :modalActive="modalActive" @close-modal="toggleModal" />
   </div>
 </template>
 
 <script setup>
 import GoBackButton from "../components/GoBackButton.vue";
+import Modal from "../components/Modal.vue";
 import { useProductStore } from "../stores/Product";
 import { ref } from "vue";
 
 const productStore = useProductStore();
+const modalActive = ref(null);
+const toggleModal = () => {
+  modalActive.value = !modalActive.value;
+};
 
 const cart = productStore.getCart;
 console.log(cart);
