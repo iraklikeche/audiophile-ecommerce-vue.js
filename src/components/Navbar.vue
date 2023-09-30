@@ -54,7 +54,6 @@ import { useProductStore } from "../stores/Product";
 const productStore = useProductStore();
 
 const cart = productStore.getCart;
-console.log(cart);
 
 const props = defineProps({
   hasBorder: {
@@ -63,13 +62,13 @@ const props = defineProps({
   },
 });
 
-const showCart = ref(false);
+// const showCart = ref(false);
 
 const route = useRoute();
 
 watch(route, () => {
   // Close the cart when the route changes
-  showCart.value = false;
+  productStore.showCart = false;
 });
 
 const uniqueCategories = computed(() => {

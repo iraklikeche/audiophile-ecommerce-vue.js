@@ -249,7 +249,6 @@ const toggleModal = () => {
 };
 
 const cart = productStore.getCart;
-console.log(cart);
 
 const eMoneyRadio = ref(null);
 const cashOnDeliveryRadio = ref(null);
@@ -314,6 +313,5 @@ const submitForm = () => {
     alert(`Please fill the following fields correctly: ${invalidFieldNames}`);
     console.log(`Invalid fields: ${invalidFieldNames}`);
   }
-
 };
 </script>

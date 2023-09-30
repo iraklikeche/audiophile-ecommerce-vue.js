@@ -11,9 +11,8 @@ const route = useRoute();
 const showCart = ref(false);
 
 const openCart = () => {
-  if (cart.length > 0) {
+  if (productStore.productIndex > 0) {
     showCart.value = !showCart.value;
-    console.log("you've added item to cart");
   } else {
     alert("cart is empty");
   }
@@ -58,6 +57,7 @@ watch(route, () => {
               >)
             </h4>
             <span
+              @click="productStore.clearCart()"
               class="text-black opacity-50 underline hover:text-[#D87D4A] transition-colors cursor-pointer"
               >Remove All</span
             >
@@ -71,9 +71,9 @@ watch(route, () => {
               <img :src="item.image" class="w-[65px]" />
               <div class="flex flex-col justify-between">
                 <span class="font-bold text-[15px]">{{ item.name }}</span>
-                <span class="font-bold text-[14px] opacity-50"
-                  >${{ item.price }}</span
-                >
+                <span class="font-bold text-[14px] opacity-50">{{
+                  item.price
+                }}</span>
               </div>
             </div>
 
@@ -102,8 +102,8 @@ watch(route, () => {
             </button>
           </RouterLink>
         </div>
-      </div></Navbar
-    >
+      </div>
+    </Navbar>
     <RouterView />
     <Footer />
   </div>

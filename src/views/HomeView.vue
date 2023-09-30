@@ -20,16 +20,16 @@ const seeProductDetails = (productId) => {
 <template>
   <section class="bg-[#0E0E0E] h-screen px-32">
     <div
-      class="grid grid-cols-2 items-center pt-6 gap-20 max-w-7xl mx-auto my-0"
+      class="grid lg:grid-cols-2 items-center pt-6 gap-20 max-w-7xl mx-auto my-0 md:bg-[url('../../public/assets//product-xx99-mark-two-headphones/tablet/Bitmap.png')] h-full bg-cover bg-center bg-no-repeat rounded-[10%]"
     >
-      <div class="py-24">
+      <div class="flex flex-col items-center justify-center py-24">
         <h2
           class="text-sm text-transform: uppercase tracking-[10px] font-medium text-white opacity-30"
         >
           New Product
         </h2>
         <h2
-          class="text-transform: uppercase text-6xl text-white mt-8 tracking-[4px]"
+          class="text-transform: uppercase font-bold xl:text-6xl md:text-5xl text-white mt-8 tracking-[4px]"
         >
           {{ data[3].name }}
         </h2>
@@ -42,17 +42,14 @@ const seeProductDetails = (productId) => {
             :productId="data[3].id"
             :isBlackBackground="false"
           />
-          <!-- <button
-            @click="seeProductDetails(data[3].id)"
-            class="text-white text-xs bg-btnDefault hover:opacity-70 py-3 px-6 tracking-[1px] font-bold transition-opacity"
-          >
-            SEE PRODUCT
-          </button> -->
         </div>
       </div>
       <div
-        class="custom-bg h-full bg-cover bg-center bg-no-repeat rounded-[10%]"
-      ></div>
+        class="custom-bg h-full bg-cover bg-center bg-no-repeat rounded-[10%] hidden lg:block"
+      >
+        111
+        <!-- <img src="../../public/assets//product-xx99-mark-two-headphones/desktop/hero-image.jpg" /> -->
+      </div>
     </div>
   </section>
   <main>
@@ -60,14 +57,17 @@ const seeProductDetails = (productId) => {
 
     <section class="product pb-32 px-32">
       <div
-        class="container bg-[#D87D4A] grid grid-cols-2 gap-20 rounded-lg px-20"
+        class="container bg-[#D87D4A] grid grid-cols-1 lg:grid-cols-2 gap-20 rounded-lg px-20"
       >
         <div class="flex justify-center">
-          <img src="../../public/assets/bg-1.png" class="pt-16" />
+          <img
+            src="../../public/assets/bg-1.png"
+            class="pt-16 w-1/2 lg:w-full"
+          />
         </div>
-        <div class="flex flex-col justify-center gap-6 pr-32">
+        <div class="flex flex-col justify-center gap-6">
           <h2
-            class="text-6xl text-white font-bold transform: uppercase tracking-[2px]"
+            class="xl:text-6xl md:text-5xl text-white font-bold transform: uppercase tracking-[2px]"
           >
             {{ data[5].name }}
           </h2>

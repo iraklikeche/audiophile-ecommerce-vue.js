@@ -1,8 +1,10 @@
 <template>
   <section class="pb-32 px-32">
-    <div class="grid grid-cols-2 gap-40 items-center">
-      <div>
-        <h2 class="text-black transform: uppercase text-5xl font-bold">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-40 items-center">
+      <div class="order-2 lg:order-1">
+        <h2
+          class="text-black transform: uppercase xl:text-5xl md:text-4xl font-bold"
+        >
           Bringing you the <span class="text-[#D87D4A]">best</span> audio gear
         </h2>
         <p class="text-black font-medium opacity-50 mt-10 leading-7">
@@ -16,8 +18,8 @@
       </div>
       <div>
         <img
-          src="../../public/assets//shared/desktop/image-best-gear.jpg"
-          class="hover:scale-110 transition-all duration-500"
+          src="../../public/assets//shared/tablet/image-best-gear.jpg"
+          class="w-full hover:scale-110 transition-all duration-500 rounded-xl"
         />
       </div>
     </div>

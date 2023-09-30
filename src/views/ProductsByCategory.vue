@@ -6,7 +6,7 @@
   </div>
 
   <main>
-    <div class="px-32">
+    <div>
       <ProductCard
         v-for="(product, index) in categoryProducts"
         :key="product.id"

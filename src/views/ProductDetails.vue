@@ -2,7 +2,7 @@
   <div class="px-32 pt-20 pb-10">
     <GoBackButton />
   </div>
-  <div v-if="product" class="px-32">
+  <div v-if="product" class="">
     <ProductCard
       :key="product.id"
       :product="product"
@@ -11,7 +11,7 @@
       :showAddToCart="true"
     />
 
-    <div class="my-32 grid grid-cols-4">
+    <div class="my-32 grid grid-cols-4 px-32">
       <div class="col-span-3 pr-36">
         <h3 class="font-bold text-4xl transform: uppercase tracking-wider">
           Features
@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <div class="mt-32 flex gap-10">
+    <div class="mt-32 flex gap-10 px-32">
       <div class="flex flex-col gap-10">
         <img
           :src="product.gallery.first.desktop"
@@ -44,10 +44,12 @@
           class="rounded-lg hover:scale-110 transition-all duration-500"
         />
       </div>
-      <img
-        :src="product.gallery.third.desktop"
-        class="rounded-lg hover:scale-110 transition-all duration-500"
-      />
+      <div class="">
+        <img
+          :src="product.gallery.third.desktop"
+          class="h-full rounded-lg hover:scale-110 transition-all duration-500"
+        />
+      </div>
     </div>
 
     <GeneralProducts />

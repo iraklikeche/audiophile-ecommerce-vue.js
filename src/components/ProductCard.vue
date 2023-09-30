@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 pb-12 gap-36 items-center justify-center">
+  <div class="grid grid-cols-2 mb-32 gap-36 items-center justify-center px-32">
     <div :class="{ 'order-1': index % 2 === 0, 'order-2': index % 2 !== 0 }">
       <img :src="product.categoryImage.desktop" alt="123" />
     </div>
@@ -38,13 +38,6 @@
       </div>
       <div class="mt-4">
         <SeeProductDetails v-if="!showAddToCart" :product-id="product.id" />
-        <!-- <button
-          v-if="!showAddToCart"
-          @click="seeProductDetails(product)"
-          class="text-white text-xs bg-btnDefault hover:opacity-70 py-3 px-6 tracking-[1px] font-bold transition-opacity"
-        >
-          SEE PRODUCT
-        </button> -->
       </div>
     </div>
   </div>
@@ -61,6 +54,7 @@ const productStore = useProductStore();
 const quantity = ref(1);
 
 const addToCart = (product) => {
+  console.log("you've added item to cart");
   const existingItem = productStore.getCart.find(
     (item) => item.id === product.id
   );

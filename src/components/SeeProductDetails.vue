@@ -22,7 +22,6 @@ const props = defineProps({
 const router = useRouter();
 
 const seeProductDetails = () => {
-  console.log(props.productId);
   // Use Vue Router to navigate to the ProductDetails page
   router.push({
     name: "product",

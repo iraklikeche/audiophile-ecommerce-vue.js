@@ -10,7 +10,6 @@ export const useProductStore = defineStore("product", () => {
 
   const addItemToCart = (product) => {
     cart.value.push(product);
-    console.log(cart.value);
   };
 
   const getCart = computed(() => cart.value);
@@ -43,7 +42,15 @@ export const useProductStore = defineStore("product", () => {
   };
 
   const clearCart = () => {
-    cart.value = [];
+    cart.value.forEach((item) => {
+      // Reset properties of each item to their initial values
+      item.name = ""; // Set the name to an empty string or the initial name value
+      item.image = ""; // Set the image to an empty string or the initial image value
+      item.quantity = ""; // Reset the quantity to 0 or the initial quantity value
+      item.price = "";
+    });
+    showCart.value = !showCart.value;
+    cart.value = []; // Reset the cart array
   };
 
   return {
