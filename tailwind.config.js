@@ -16,7 +16,7 @@ export default {
       // => @media (min-width: 640px)
 
       // Small Tablets Screens
-      md: "768px",
+      md: { min: "768px", max: "1023px" },
       // => @media (min-width: 768px)
 
       // Tablet Screens

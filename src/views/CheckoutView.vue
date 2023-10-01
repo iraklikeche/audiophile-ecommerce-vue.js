@@ -3,10 +3,8 @@
     <div class="pb-12 pt-20">
       <GoBackButton />
     </div>
-    <!-- <div class="pb-40 grid grid-cols-[2fr,1fr] gap-8"> -->
-    <!-- <div class="bg-white shadow-lg px-12 py-16 rounded-lg"> -->
 
-    <form class="grid grid-cols-[2fr,1fr] gap-8 mb-32">
+    <form class="grid grid-cols-[2fr,1fr] md:grid-cols-1 gap-8 mb-32">
       <div class="bg-white shadow-lg px-12 py-16 rounded-lg">
         <h1 class="transform: uppercase text-3xl font-bold tracking-wide mb-12">
           Checkout

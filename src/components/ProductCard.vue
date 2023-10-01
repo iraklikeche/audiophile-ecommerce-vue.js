@@ -1,10 +1,20 @@
 <template>
-  <div class="grid grid-cols-2 mb-32 gap-36 items-center justify-center px-32">
-    <div :class="{ 'order-1': index % 2 === 0, 'order-2': index % 2 !== 0 }">
+  <div
+    class="grid md:grid-cols-1 grid-cols-2 mb-32 gap-36 md:gap-20 items-center justify-center px-32"
+  >
+    <div
+      :class="{ 'order-1': index % 2 === 0, 'order-2': index % 2 !== 0 }"
+      class="md:hidden"
+    >
       <img :src="product.categoryImage.desktop" alt="123" />
     </div>
+
+    <!-- Tablet -->
+    <div class="lg:hidden">
+      <img :src="product.categoryImage.tablet" alt="123" />
+    </div>
     <div
-      class="flex flex-col gap-4"
+      class="flex flex-col gap-4 md:items-center"
       :class="{ 'order-2': index % 2 === 0, 'order-1': index % 2 !== 0 }"
     >
       <h3
@@ -15,7 +25,9 @@
       <h2 class="text-4xl font-bold transform: uppercase">
         {{ product.name }}
       </h2>
-      <p class="text-black opacity-50 font-sm font-medium leading-6">
+      <p
+        class="text-black opacity-50 font-sm font-medium leading-6 md:text-center"
+      >
         {{ product.description }}
       </p>
 

@@ -1,13 +1,15 @@
 <template>
   <section class="pb-32 px-32">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-40 items-center">
-      <div class="order-2 lg:order-1">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-40 md:gap-30 items-center">
+      <div class="flex flex-col justify-center items-center order-2 lg:order-1">
         <h2
           class="text-black transform: uppercase xl:text-5xl md:text-4xl font-bold"
         >
           Bringing you the <span class="text-[#D87D4A]">best</span> audio gear
         </h2>
-        <p class="text-black font-medium opacity-50 mt-10 leading-7">
+        <p
+          class="text-black font-medium opacity-50 mt-10 leading-7 md:text-center"
+        >
           Located at the heart of New York City, Audiophile is the premier store
           for high end headphones, earphones, speakers, and audio accessories.
           We have a large showroom and luxury demonstration rooms available for
@@ -16,10 +18,14 @@
           best place to buy your portable audio equipment.
         </p>
       </div>
-      <div>
+      <div class="lg:order-2">
+        <img
+          src="../../public/assets//shared/desktop/image-best-gear.jpg"
+          class="w-full hover:scale-110 transition-all duration-500 rounded-xl md:hidden"
+        />
         <img
           src="../../public/assets//shared/tablet/image-best-gear.jpg"
-          class="w-full hover:scale-110 transition-all duration-500 rounded-xl"
+          class="w-full hover:scale-110 transition-all duration-500 rounded-xl hidden md:block"
         />
       </div>
     </div>

@@ -11,8 +11,8 @@
       :showAddToCart="true"
     />
 
-    <div class="my-32 grid grid-cols-4 px-32">
-      <div class="col-span-3 pr-36">
+    <div class="my-32 grid md:grid-cols-1 md:gap-12 grid-cols-4 px-32">
+      <div class="col-span-3 pr-36 md:pr-0">
         <h3 class="font-bold text-4xl transform: uppercase tracking-wider">
           Features
         </h3>
@@ -20,11 +20,11 @@
           {{ product.features }}
         </p>
       </div>
-      <div class="col-span-1">
+      <div class="col-span-1 md:flex justify-between">
         <h3 class="font-bold text-4xl transform: uppercase tracking-wider">
           In the box
         </h3>
-        <ul class="mt-10 flex flex-col gap-4">
+        <ul class="mt-10 md:mt-0 flex flex-col gap-4">
           <li v-for="item in product.includes" class="flex items-center gap-8">
             <span class="text-[#D87D4A] text-base">{{ item.quantity }}x</span>
             <span class="text-black opacity-50">{{ item.item }}</span>
