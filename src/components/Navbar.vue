@@ -1,5 +1,5 @@
 <template>
-  <header class="px-32 bg-[#0E0E0E]">
+  <header class="px-4 sm:px-32 bg-[#0E0E0E]">
     <nav
       :class="{
         'border-b border-gray-300 border-opacity border-opacity-20': hasBorder,
@@ -24,7 +24,7 @@
       </RouterLink>
 
       <div
-        class="flex gap-6 text-sm text-transform: uppercase font-bold text-white tracking-[1.5px]"
+        class="flex gap-6 text-sm text-transform: uppercase font-bold text-white tracking-[1.5px] hidden"
       >
         <RouterLink
           :to="{ name: 'home' }"

@@ -1,10 +1,10 @@
 <template>
-  <div class="px-32 bg-[#f1f1f1]">
+  <div class="px-8 sm:px-32 bg-[#f1f1f1]">
     <div class="pb-12 pt-20">
       <GoBackButton />
     </div>
 
-    <form class="grid grid-cols-[2fr,1fr] md:grid-cols-1 gap-8 mb-32">
+    <form class="grid lg:grid-cols-[2fr,1fr] grid-cols-1 gap-8 mb-32">
       <div class="bg-white shadow-lg px-12 py-16 rounded-lg">
         <h1 class="transform: uppercase text-3xl font-bold tracking-wide mb-12">
           Checkout

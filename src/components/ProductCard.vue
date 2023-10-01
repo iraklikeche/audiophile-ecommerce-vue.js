@@ -1,20 +1,26 @@
 <template>
   <div
-    class="grid md:grid-cols-1 grid-cols-2 mb-32 gap-36 md:gap-20 items-center justify-center px-32"
+    class="grid grid-cols-1 lg:grid-cols-2 mb-32 sm:gap-36 gap-20 items-center justify-center px-8 sm:px-32"
   >
+    <!-- Desktop -->
     <div
       :class="{ 'order-1': index % 2 === 0, 'order-2': index % 2 !== 0 }"
-      class="md:hidden"
+      class="hidden lg:block"
     >
       <img :src="product.categoryImage.desktop" alt="123" />
     </div>
 
     <!-- Tablet -->
-    <div class="lg:hidden">
+    <div class="hidden sm:block">
       <img :src="product.categoryImage.tablet" alt="123" />
     </div>
+
+    <!-- Mobile -->
+    <div class="sm:hidden">
+      <img :src="product.categoryImage.mobile" alt="123" />
+    </div>
     <div
-      class="flex flex-col gap-4 md:items-center"
+      class="flex flex-col gap-4 items-center"
       :class="{ 'order-2': index % 2 === 0, 'order-1': index % 2 !== 0 }"
     >
       <h3
@@ -22,11 +28,11 @@
       >
         New Product
       </h3>
-      <h2 class="text-4xl font-bold transform: uppercase">
+      <h2 class="text-4xl font-bold transform: uppercase text-center">
         {{ product.name }}
       </h2>
       <p
-        class="text-black opacity-50 font-sm font-medium leading-6 md:text-center"
+        class="text-black opacity-50 font-sm font-medium leading-6 text-center"
       >
         {{ product.description }}
       </p>

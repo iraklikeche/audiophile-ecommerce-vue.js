@@ -3,12 +3,12 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-40 md:gap-30 items-center">
       <div class="flex flex-col justify-center items-center order-2 lg:order-1">
         <h2
-          class="text-black transform: uppercase xl:text-5xl md:text-4xl font-bold"
+          class="text-black transform: uppercase xl:text-5xl text-4xl font-bold text-center"
         >
           Bringing you the <span class="text-[#D87D4A]">best</span> audio gear
         </h2>
         <p
-          class="text-black font-medium opacity-50 mt-10 leading-7 md:text-center"
+          class="text-black font-medium opacity-50 mt-10 leading-7 text-center"
         >
           Located at the heart of New York City, Audiophile is the premier store
           for high end headphones, earphones, speakers, and audio accessories.

@@ -1,5 +1,5 @@
 <template>
-  <div class="px-32 pt-20 pb-10">
+  <div class="px-8 sm:px-32 pt-20 pb-10">
     <GoBackButton />
   </div>
   <div v-if="product" class="">
@@ -11,8 +11,8 @@
       :showAddToCart="true"
     />
 
-    <div class="my-32 grid md:grid-cols-1 md:gap-12 grid-cols-4 px-32">
-      <div class="col-span-3 pr-36 md:pr-0">
+    <div class="my-32 grid grid-cols-1 gap-12 lg:grid-cols-4 px-8 sm:px-32">
+      <div class="col-span-3 lg:pr-36 pr-0">
         <h3 class="font-bold text-4xl transform: uppercase tracking-wider">
           Features
         </h3>
@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <div class="mt-32 flex gap-10 px-32">
+    <div class="mt-32 flex gap-10 px-8 sm:px-32">
       <div class="flex flex-col gap-10">
         <img
           :src="product.gallery.first.desktop"

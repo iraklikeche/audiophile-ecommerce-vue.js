@@ -1,6 +1,6 @@
 <template>
-  <section class="general-products px-32 pt-48 pb-44">
-    <div class="container mx-auto my-0 flex gap-8">
+  <section class="general-products px-8 sm:px-32 pt-48 pb-44">
+    <div class="container mx-auto my-0 flex flex-col gap-40">
       <div
         class="flex flex-col items-center justify-end pt-28 bg-[#f1f1f1] rounded-lg relative w-full"
       >
@@ -16,7 +16,7 @@
         </button>
       </div>
       <div
-        class="flex flex-col items-center justify-end pt-16 bg-[#f1f1f1] rounded-lg relative w-full"
+        class="flex flex-col items-center justify-end pt-28 bg-[#f1f1f1] rounded-lg relative w-full"
       >
         <img
           class="w-[200px] absolute bottom-[40%]"
@@ -30,7 +30,7 @@
         </button>
       </div>
       <div
-        class="flex flex-col items-center justify-end pt-24 bg-[#f1f1f1] rounded-lg relative w-full"
+        class="flex flex-col items-center justify-end pt-28 bg-[#f1f1f1] rounded-lg relative w-full"
       >
         <img
           class="w-[200px] absolute bottom-[40%]"
