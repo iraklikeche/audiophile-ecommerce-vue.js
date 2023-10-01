@@ -24,7 +24,7 @@
       </RouterLink>
 
       <div
-        class="flex gap-6 text-sm text-transform: uppercase font-bold text-white tracking-[1.5px] hidden"
+        class="lg:flex gap-6 text-sm text-transform: uppercase font-bold text-white tracking-[1.5px] hidden"
       >
         <RouterLink
           :to="{ name: 'home' }"

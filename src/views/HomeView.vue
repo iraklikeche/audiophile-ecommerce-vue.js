@@ -20,20 +20,24 @@ const seeProductDetails = (productId) => {
 <template>
   <section class="bg-[#0E0E0E] h-screen lg:px-32">
     <div
-      class="grid lg:grid-cols-2 items-center pt-6 gap-20 max-w-7xl mx-auto my-0 bg-[url('../../public/assets//product-xx99-mark-two-headphones/tablet/Bitmap.png')] h-full bg-cover bg-center bg-no-repeat rounded-[10%]"
+      class="grid lg:grid-cols-2 items-center pt-6 gap-20 max-w-7xl mx-auto my-0 bg-[url('../../public/assets//product-xx99-mark-two-headphones/tablet/Bitmap.png')] lg:bg-none h-full bg-cover bg-center bg-no-repeat rounded-[10%]"
     >
-      <div class="flex flex-col items-center justify-center py-24">
+      <div
+        class="flex flex-col items-center lg:items-start justify-center py-24"
+      >
         <h2
           class="text-sm text-transform: uppercase tracking-[10px] font-medium text-white opacity-30"
         >
           New Product
         </h2>
         <h2
-          class="text-transform: uppercase font-bold xl:text-6xl text-5xl text-center text-white mt-8 tracking-[4px]"
+          class="text-transform: uppercase font-bold xl:text-6xl text-5xl text-center lg:text-left text-white mt-8 tracking-[4px]"
         >
           {{ data[3].name }}
         </h2>
-        <p class="text-white mt-8 font-medium opacity-60 leading-8 text-center">
+        <p
+          class="text-white mt-8 font-medium opacity-60 leading-8 text-center lg:text-left"
+        >
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
@@ -64,20 +68,22 @@ const seeProductDetails = (productId) => {
             class="pt-16 w-1/2 lg:w-full"
           />
         </div>
-        <div class="flex flex-col justify-center gap-6 items-center">
+        <div
+          class="flex flex-col justify-center gap-6 items-center lg:items-start"
+        >
           <h2
-            class="xl:text-6xl text-5xl md:text-center text-white font-bold transform: uppercase tracking-[2px] text-center"
+            class="xl:text-6xl text-5xl md:text-center lg:text-left text-white font-bold transform: uppercase tracking-[2px] text-center"
           >
             {{ data[5].name }}
           </h2>
           <p
-            class="text-base font-medium text-white opacity-50 leading-7 text-center"
+            class="text-base font-medium text-white opacity-50 leading-7 text-center lg:text-left"
           >
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
 
-          <div class="mt-6 pb-12 md:text-center">
+          <div class="mt-6 pb-12 md:text-center lg:text-left">
             <SeeProductDetails
               :productId="data[5].id"
               :isBlackBackground="true"

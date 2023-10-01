@@ -13,7 +13,7 @@
         </p>
 
         <p
-          class="text-white font-medium opacity-50 mt-10 leading-7 text-center"
+          class="text-white font-medium opacity-50 mt-10 leading-7 text-center lg:text-left"
         >
           &copy; {{ currentYear }}. All Rights Reserved
         </p>

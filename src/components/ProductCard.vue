@@ -11,7 +11,7 @@
     </div>
 
     <!-- Tablet -->
-    <div class="hidden sm:block">
+    <div class="hidden md:block">
       <img :src="product.categoryImage.tablet" alt="123" />
     </div>
 
@@ -20,7 +20,7 @@
       <img :src="product.categoryImage.mobile" alt="123" />
     </div>
     <div
-      class="flex flex-col gap-4 items-center"
+      class="flex flex-col gap-4 items-center lg:items-start"
       :class="{ 'order-2': index % 2 === 0, 'order-1': index % 2 !== 0 }"
     >
       <h3
@@ -28,11 +28,13 @@
       >
         New Product
       </h3>
-      <h2 class="text-4xl font-bold transform: uppercase text-center">
+      <h2
+        class="text-4xl font-bold transform: uppercase text-center lg:text-left"
+      >
         {{ product.name }}
       </h2>
       <p
-        class="text-black opacity-50 font-sm font-medium leading-6 text-center"
+        class="text-black opacity-50 font-sm font-medium leading-6 text-center lg:text-left"
       >
         {{ product.description }}
       </p>
