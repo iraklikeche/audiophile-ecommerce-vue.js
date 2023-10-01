@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid grid-cols-1 lg:grid-cols-2 mb-32 sm:gap-36 gap-20 items-center justify-center px-8 sm:px-32"
+    class="grid grid-cols-1 lg:grid-cols-2 mb-32 lg:gap-36 gap-20 items-center justify-center px-8 lg:px-32"
   >
     <!-- Desktop -->
     <div

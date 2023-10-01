@@ -1,9 +1,11 @@
 <template>
   <Navbar :hasBorder="false" />
-  <div class="bg-[#101010] px-8 sm:px-32 pt-8 pb-10">
-    <div class="grid sm:grid-cols-2 justify-between items-center">
+  <div class="bg-[#101010] px-8 lg:px-32 pt-8 pb-10">
+    <div class="grid lg:grid-cols-2 justify-between items-center">
       <div class="flex flex-col">
-        <p class="text-white font-medium opacity-50 mt-10 leading-7 text-cener">
+        <p
+          class="text-white font-medium opacity-50 mt-10 leading-7 text-center sm:text-left"
+        >
           Audiophile is an all in one stop to fulfill your audio needs. We're a
           small team of music lovers and sound specialists who are devoted to
           helping you get the most out of personal audio. Come and visit our
@@ -17,7 +19,7 @@
         </p>
       </div>
 
-      <div class="flex sm:justify-end justify-center gap-5 mt-10">
+      <div class="flex lg:justify-end justify-center gap-5 mt-10">
         <a href="#">
           <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
             <path

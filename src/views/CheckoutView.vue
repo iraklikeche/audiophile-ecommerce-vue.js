@@ -1,5 +1,5 @@
 <template>
-  <div class="px-8 sm:px-32 bg-[#f1f1f1]">
+  <div class="px-8 lg:px-32 bg-[#f1f1f1]">
     <div class="pb-12 pt-20">
       <GoBackButton />
     </div>

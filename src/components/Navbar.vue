@@ -1,5 +1,5 @@
 <template>
-  <header class="px-4 sm:px-32 bg-[#0E0E0E]">
+  <header class="px-4 lg:px-32 bg-[#0E0E0E]">
     <nav
       :class="{
         'border-b border-gray-300 border-opacity border-opacity-20': hasBorder,

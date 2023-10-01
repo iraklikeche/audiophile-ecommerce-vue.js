@@ -18,7 +18,7 @@ const seeProductDetails = (productId) => {
 </script>
 
 <template>
-  <section class="bg-[#0E0E0E] h-screen sm:px-32">
+  <section class="bg-[#0E0E0E] h-screen lg:px-32">
     <div
       class="grid lg:grid-cols-2 items-center pt-6 gap-20 max-w-7xl mx-auto my-0 bg-[url('../../public/assets//product-xx99-mark-two-headphones/tablet/Bitmap.png')] h-full bg-cover bg-center bg-no-repeat rounded-[10%]"
     >
@@ -54,7 +54,7 @@ const seeProductDetails = (productId) => {
   <main>
     <GeneralProducts />
 
-    <section class="product pb-32 px-8 sm:px-32">
+    <section class="product pb-32 px-8 lg:px-32">
       <div
         class="container bg-[#D87D4A] grid grid-cols-1 lg:grid-cols-2 justify-center gap-20 rounded-lg sm:px-20"
       >
@@ -103,11 +103,11 @@ const seeProductDetails = (productId) => {
         <div>
           <img
             src="../../public/assets/product-yx1-earphones/desktop/image-gallery-2.jpg"
-            class="rounded-lg w-full md:h-full"
+            class="rounded-lg w-full sm:h-full"
           />
         </div>
         <div
-          class="flex flex-col justify-center gap-8 bg-[#F1F1F1] pl-24 md:p-8 py-16 rounded-lg"
+          class="flex flex-col justify-center gap-8 bg-[#F1F1F1] pl-24 sm:p-8 py-16 rounded-lg"
         >
           <h2
             class="text-3xl md:text-xl font-bold transform: uppercase tracking-[2px]"
