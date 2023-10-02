@@ -11,19 +11,21 @@
       :showAddToCart="true"
     />
 
-    <div class="my-32 grid grid-cols-1 gap-12 lg:grid-cols-4 px-8 lg:px-32">
-      <div class="col-span-3 lg:pr-36 pr-0">
+    <div
+      class="my-32 grid grid-cols-1 gap-12 lg:grid-cols-4 px-8 lg:px-32 text-center lg:text-left"
+    >
+      <div class="col-span-3 xl:pr-36 lg:pr-0 pr-0">
         <h3 class="font-bold text-4xl transform: uppercase tracking-wider">
           Features
         </h3>
         <p
-          class="text-black opacity-50 font-medium text-base mt-10 leading-7 pr-20"
+          class="text-black opacity-50 font-medium text-base mt-10 leading-7 lg:pr-20"
         >
           {{ product.features }}
         </p>
       </div>
       <div
-        class="col-span-1 sm:flex lg:flex-col justify-between lg:justify-around"
+        class="col-span-3 lg:col-span-1 flex flex-col items-center justify-between lg:justify-around"
       >
         <h3 class="font-bold text-4xl transform: uppercase tracking-wider">
           In the box

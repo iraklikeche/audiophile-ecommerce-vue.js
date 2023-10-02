@@ -44,7 +44,7 @@
         <div class="flex gap-5 mt-4">
           <input
             type="number"
-            class="bg-[#f1f1f1] pl-2"
+            class="bg-[#f1f1f1] pl-2 lg:w-1/3"
             placeholder="0"
             v-model="quantity"
           />
@@ -71,6 +71,7 @@ import SeeProductDetails from "./SeeProductDetails.vue";
 
 const router = useRouter();
 const productStore = useProductStore();
+const cart = productStore.getCart;
 const quantity = ref(1);
 
 const addToCart = (product) => {
@@ -93,6 +94,7 @@ const addToCart = (product) => {
       quantity: quantity.value,
     });
   }
+  console.log(product);
 };
 
 const props = defineProps({

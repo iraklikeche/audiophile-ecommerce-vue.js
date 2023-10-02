@@ -4,6 +4,7 @@ import data from "../data.json";
 
 export const useProductStore = defineStore("product", () => {
   const productData = ref(data);
+  const showCart = ref(false);
 
   const cart = ref([]);
   const productIndex = computed(() => cart.value.length);
@@ -51,7 +52,10 @@ export const useProductStore = defineStore("product", () => {
     });
     showCart.value = !showCart.value;
     cart.value = []; // Reset the cart array
+    console.log(cart.value);
   };
+
+  console.log(cart.value);
 
   return {
     productData,

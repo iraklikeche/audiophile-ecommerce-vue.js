@@ -3,24 +3,32 @@ import { RouterLink, RouterView, useRoute } from "vue-router";
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 import { useProductStore } from "./stores/Product";
-import { ref, watch } from "vue";
+import { ref, watch, computed } from "vue";
 
 const productStore = useProductStore();
 const cart = productStore.getCart;
 const route = useRoute();
 const showCart = ref(false);
 
+// const openCart = () => {
+//   if (productStore.productIndex > 0) {
+//     showCart.value = !showCart.value;
+//   } else {
+//     alert("cart is empty");
+//   }
+// };
 const openCart = () => {
-  if (productStore.productIndex > 0) {
-    showCart.value = !showCart.value;
-  } else {
-    alert("cart is empty");
-  }
+  showCart.value = !showCart.value;
 };
 watch(route, () => {
   // Close the cart when the route changes
   showCart.value = false;
 });
+
+const isLinkEnabled = computed(() => {
+  return productStore.productIndex > 0;
+});
+console.log(productStore.productIndex);
 </script>
 
 <template>
@@ -49,7 +57,7 @@ watch(route, () => {
 
         <div
           v-if="showCart"
-          class="flex flex-col absolute z-50 right-0 top-[-50%] translate-y-[35%] shadow-2xl p-8 bg-white"
+          class="flex flex-col absolute z-50 right-0 top-[-50%] translate-y-[35%] shadow-2xl p-8 bg-white min-w-[300px]"
         >
           <div class="flex justify-between mb-8">
             <h4 class="text-black font-bold tracking-wide">
@@ -62,7 +70,9 @@ watch(route, () => {
               >Remove All</span
             >
           </div>
+
           <div
+            v-if="productStore.productIndex"
             v-for="item in cart"
             :key="cart.id"
             class="flex items-center mb-8 gap-40"
@@ -87,6 +97,10 @@ watch(route, () => {
             </div>
           </div>
 
+          <div v-else class="my-4">
+            <h1>No Product In Cart</h1>
+          </div>
+
           <div class="flex justify-between">
             <span class="text-black opacity-50">TOTAL</span>
             <span class="text-black font-bold"
@@ -94,13 +108,15 @@ watch(route, () => {
             >
           </div>
 
-          <RouterLink :to="{ name: 'checkout' }">
-            <button
-              class="w-full bg-[#D87D4A] mt-4 px-8 py-3 transform: uppercase tracking-wider text-white text-xs hover:opacity-70 transition-opacity"
-            >
-              Checkout
-            </button>
+          <!-- <button class="" :disabled="isButtonDisabled"> -->
+          <RouterLink
+            v-if="isLinkEnabled"
+            :to="{ name: 'checkout' }"
+            class="w-full bg-[#D87D4A] mt-4 px-8 py-3 transform: uppercase tracking-wider text-white text-xs hover:opacity-70 transition-opacity text-center"
+          >
+            Checkout
           </RouterLink>
+          <!-- </button> -->
         </div>
       </div>
     </Navbar>

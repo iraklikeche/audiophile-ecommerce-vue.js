@@ -50,9 +50,7 @@ const seeProductDetails = (productId) => {
       </div>
       <div
         class="custom-bg h-full bg-cover bg-center bg-no-repeat rounded-[10%] hidden lg:block"
-      >
-        <!-- <img src="../../public/assets//product-xx99-mark-two-headphones/desktop/hero-image.jpg" /> -->
-      </div>
+      ></div>
     </div>
   </section>
   <main>
@@ -60,7 +58,7 @@ const seeProductDetails = (productId) => {
 
     <section class="product pb-32 px-8 lg:px-32">
       <div
-        class="container bg-[#D87D4A] grid grid-cols-1 lg:grid-cols-2 justify-center gap-20 rounded-lg sm:px-20"
+        class="bg-[#D87D4A] grid grid-cols-1 lg:grid-cols-2 justify-center gap-20 rounded-lg sm:px-20"
       >
         <div class="flex justify-center">
           <img
@@ -92,7 +90,7 @@ const seeProductDetails = (productId) => {
         </div>
       </div>
       <div
-        class="container bg-1 flex items-center mt-12 h-[350px] bg-cover bg-center bg-no-repeat rounded-lg"
+        class="bg-1 flex items-center mt-12 h-[350px] bg-cover bg-center bg-no-repeat rounded-lg"
       >
         <div class="pl-24 flex flex-col gap-8">
           <h2 class="text-3xl font-bold transform: uppercase tracking-[2px]">
