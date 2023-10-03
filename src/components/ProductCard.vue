@@ -75,7 +75,6 @@ const cart = productStore.getCart;
 const quantity = ref(1);
 
 const addToCart = (product) => {
-  console.log("you've added item to cart");
   const existingItem = productStore.getCart.find(
     (item) => item.id === product.id
   );
@@ -94,7 +93,7 @@ const addToCart = (product) => {
       quantity: quantity.value,
     });
   }
-  console.log(product);
+  console.log(product, "add to cart product");
 };
 
 const props = defineProps({
