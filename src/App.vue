@@ -1,12 +1,13 @@
 <script setup>
 import { RouterLink, RouterView, useRoute } from "vue-router";
+import { storeToRefs } from "pinia";
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
 import { useProductStore } from "./stores/Product";
 import { ref, watch, computed } from "vue";
 
 const productStore = useProductStore();
-const cart = productStore.getCart;
+const { cart } = storeToRefs(productStore);
 const route = useRoute();
 const showCart = ref(false);
 
@@ -25,10 +26,13 @@ watch(route, () => {
   showCart.value = false;
 });
 
+watch(cart, () => {
+  console.log(1, cart);
+});
+
 const isLinkEnabled = computed(() => {
   return productStore.productIndex > 0;
 });
-console.log(productStore.productIndex);
 </script>
 
 <template>
@@ -72,7 +76,7 @@ console.log(productStore.productIndex);
           </div>
 
           <div
-            v-if="productStore.productIndex"
+            v-if="true"
             v-for="item in cart"
             :key="item.id"
             class="flex items-center mb-8 gap-40"

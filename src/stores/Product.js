@@ -1,4 +1,4 @@
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import { defineStore } from "pinia";
 import data from "../data.json";
 
@@ -14,12 +14,9 @@ export const useProductStore = defineStore("product", () => {
   // };
 
   const addItemToCart = (product) => {
-    // Create a new object for the cart item by spreading the properties of the product
-    const cartItem = { ...product, quantity: 1 }; // Assuming the initial quantity is 1
-    cart.value.push(cartItem);
+    cart.value.push(product);
+    console.log(cart.value);
   };
-
-  const getCart = computed(() => cart.value);
 
   const totalPrice = computed(() => {
     return cart.value.reduce((total, item) => {
@@ -64,12 +61,12 @@ export const useProductStore = defineStore("product", () => {
   console.log(cart.value);
 
   return {
+    cart,
     productData,
     getCategoryDataByName,
     getProductById,
     productIndex,
     addItemToCart,
-    getCart,
     totalPrice,
     totalPriceCheckout,
     clearCart,
