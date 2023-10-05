@@ -74,7 +74,7 @@ console.log(productStore.productIndex);
           <div
             v-if="productStore.productIndex"
             v-for="item in cart"
-            :key="cart.id"
+            :key="item.id"
             class="flex items-center mb-8 gap-40"
           >
             <div class="flex gap-4">

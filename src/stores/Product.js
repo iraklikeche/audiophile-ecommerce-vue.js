@@ -9,8 +9,14 @@ export const useProductStore = defineStore("product", () => {
   const cart = ref([]);
   const productIndex = computed(() => cart.value.length);
 
+  // const addItemToCart = (product) => {
+  //   cart.value.push(product);
+  // };
+
   const addItemToCart = (product) => {
-    cart.value.push(product);
+    // Create a new object for the cart item by spreading the properties of the product
+    const cartItem = { ...product, quantity: 1 }; // Assuming the initial quantity is 1
+    cart.value.push(cartItem);
   };
 
   const getCart = computed(() => cart.value);
@@ -43,13 +49,13 @@ export const useProductStore = defineStore("product", () => {
   };
 
   const clearCart = () => {
-    cart.value.forEach((item) => {
-      // Reset properties of each item to their initial values
-      item.name = ""; // Set the name to an empty string or the initial name value
-      item.image = ""; // Set the image to an empty string or the initial image value
-      item.quantity = ""; // Reset the quantity to 0 or the initial quantity value
-      item.price = "";
-    });
+    // cart.value.forEach((item) => {
+    //   // Reset properties of each item to their initial values
+    //   item.name = ""; // Set the name to an empty string or the initial name value
+    //   item.image = ""; // Set the image to an empty string or the initial image value
+    //   item.quantity = ""; // Reset the quantity to 0 or the initial quantity value
+    //   item.price = "";
+    // });
     showCart.value = !showCart.value;
     cart.value = []; // Reset the cart array
     console.log(cart.value);
