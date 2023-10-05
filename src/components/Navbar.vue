@@ -53,8 +53,6 @@ import { useProductStore } from "../stores/Product";
 
 const productStore = useProductStore();
 
-const cart = productStore.getCart;
-
 const props = defineProps({
   hasBorder: {
     type: Boolean,

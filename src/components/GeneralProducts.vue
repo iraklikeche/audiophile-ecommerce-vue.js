@@ -11,9 +11,15 @@
         <p class="text-transform: uppercase tracking-[1px] font-bold font-lg">
           {{ data[3].category }}
         </p>
-        <button class="my-4 text-sm font-bold opacity-50 tracking-[2px]">
-          SHOP
-        </button>
+        <RouterLink
+          :to="{ name: 'category', params: { category: data[3].category } }"
+        >
+          <button
+            class="my-4 text-sm font-bold opacity-50 tracking-[2px] hover:text-[#D87D4A] hover:opacity-100 transition-all"
+          >
+            SHOP
+          </button>
+        </RouterLink>
       </div>
       <div
         class="flex flex-col items-center justify-end pt-28 bg-[#f1f1f1] rounded-lg relative w-full"
@@ -25,9 +31,15 @@
         <p class="text-transform: uppercase tracking-[1px] font-bold text-lg">
           {{ data[4].category }}
         </p>
-        <button class="my-4 text-sm font-bold opacity-50 tracking-[2px]">
-          SHOP
-        </button>
+        <RouterLink
+          :to="{ name: 'category', params: { category: data[4].category } }"
+        >
+          <button
+            class="my-4 text-sm font-bold opacity-50 tracking-[2px] hover:text-[#D87D4A] hover:opacity-100 transition-all"
+          >
+            SHOP
+          </button>
+        </RouterLink>
       </div>
 
       <div
@@ -40,9 +52,15 @@
         <p class="text-transform: uppercase tracking-[1px] font-bold text-lg">
           {{ data[0].category }}
         </p>
-        <button class="my-4 text-sm font-bold opacity-50 tracking-[2px]">
-          SHOP
-        </button>
+        <RouterLink
+          :to="{ name: 'category', params: { category: data[0].category } }"
+        >
+          <button
+            class="my-4 text-sm font-bold opacity-50 tracking-[2px] hover:text-[#D87D4A] hover:opacity-100 transition-all"
+          >
+            SHOP
+          </button>
+        </RouterLink>
       </div>
     </div>
   </section>
@@ -50,4 +68,9 @@
 
 <script setup>
 import data from "../data.json";
+import { RouterLink, useRoute } from "vue-router";
+
+const route = useRoute();
+
+console.log(data);
 </script>
