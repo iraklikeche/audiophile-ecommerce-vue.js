@@ -11,23 +11,12 @@ const { cart } = storeToRefs(productStore);
 const route = useRoute();
 const showCart = ref(false);
 
-// const openCart = () => {
-//   if (productStore.productIndex > 0) {
-//     showCart.value = !showCart.value;
-//   } else {
-//     alert("cart is empty");
-//   }
-// };
 const openCart = () => {
   showCart.value = !showCart.value;
 };
 watch(route, () => {
   // Close the cart when the route changes
   showCart.value = false;
-});
-
-watch(cart, () => {
-  console.log(1, cart);
 });
 
 const isLinkEnabled = computed(() => {

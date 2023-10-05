@@ -81,7 +81,6 @@
 </style>
 
 <script setup>
-import { useRouter } from "vue-router";
 import { useProductStore } from "../stores/Product";
 import { storeToRefs } from "pinia";
 import { ref } from "vue";
@@ -112,7 +111,7 @@ const addToCart = (product) => {
   isVisible.value = true;
   setTimeout(() => {
     isVisible.value = false;
-  }, 3000); // 2000 milliseconds = 2 seconds
+  }, 1500); // 2000 milliseconds = 2 seconds
 
   // console.log(product, "add to cart product");
 };

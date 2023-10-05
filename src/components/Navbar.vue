@@ -46,7 +46,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from "vue";
+import { computed, watch } from "vue";
 import data from "../data.json";
 import { useRoute } from "vue-router";
 import { useProductStore } from "../stores/Product";
@@ -59,8 +59,6 @@ const props = defineProps({
     default: true,
   },
 });
-
-// const showCart = ref(false);
 
 const route = useRoute();
 

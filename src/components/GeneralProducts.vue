@@ -68,9 +68,5 @@
 
 <script setup>
 import data from "../data.json";
-import { RouterLink, useRoute } from "vue-router";
-
-const route = useRoute();
-
-console.log(data);
+import { RouterLink } from "vue-router";
 </script>
