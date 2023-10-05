@@ -61,7 +61,7 @@ const isLinkEnabled = computed(() => {
 
         <div
           v-if="showCart"
-          class="flex flex-col absolute z-50 right-0 top-[-50%] translate-y-[35%] shadow-2xl p-8 bg-white min-w-[300px]"
+          class="flex flex-col absolute z-50 right-0 top-[-50%] translate-y-[25%] shadow-2xl p-8 bg-white min-w-[300px]"
         >
           <div class="flex justify-between mb-8">
             <h4 class="text-black font-bold tracking-wide">
@@ -85,9 +85,9 @@ const isLinkEnabled = computed(() => {
               <img :src="item.image" class="w-[65px]" />
               <div class="flex flex-col justify-between">
                 <span class="font-bold text-[15px]">{{ item.name }}</span>
-                <span class="font-bold text-[14px] opacity-50">{{
-                  item.price
-                }}</span>
+                <span class="font-bold text-[14px] opacity-50"
+                  >$ {{ item.price }}</span
+                >
               </div>
             </div>
 

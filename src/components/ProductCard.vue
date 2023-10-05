@@ -20,7 +20,7 @@
       <img :src="product.categoryImage.mobile" alt="123" />
     </div>
     <div
-      class="flex flex-col gap-4 items-center lg:items-start"
+      class="flex flex-col gap-6 items-center lg:items-start"
       :class="{ 'order-2': index % 2 === 0, 'order-1': index % 2 !== 0 }"
     >
       <h3
@@ -39,7 +39,7 @@
         {{ product.description }}
       </p>
 
-      <div v-if="showAddToCart">
+      <div v-if="showAddToCart" class="mt-4 flex flex-col gap-4">
         <span class="tracking-widest">$ {{ product.price }}</span>
         <div class="flex gap-5 mt-4">
           <input
@@ -55,6 +55,11 @@
             Add to cart
           </button>
         </div>
+        <Transition name="foo">
+          <span v-if="isVisible" class="text-[#D87D4A]"
+            >Product Added To Cart.</span
+          >
+        </Transition>
       </div>
       <div class="mt-4">
         <SeeProductDetails v-if="!showAddToCart" :product-id="product.id" />
@@ -63,22 +68,32 @@
   </div>
 </template>
 
+<style scoped>
+.foo-enter-active,
+.foo-leave-active {
+  transition: opacity 2s cubic-bezier(0.52, 0.02, 0.19, 1.02);
+}
+
+.foo-enter-from,
+.foo-leave-to {
+  opacity: 0;
+}
+</style>
+
 <script setup>
 import { useRouter } from "vue-router";
 import { useProductStore } from "../stores/Product";
+import { storeToRefs } from "pinia";
 import { ref } from "vue";
 import SeeProductDetails from "./SeeProductDetails.vue";
 
-const router = useRouter();
 const productStore = useProductStore();
-const cart = productStore.getCart;
+const { cart } = storeToRefs(productStore);
 const quantity = ref(1);
+const isVisible = ref(false);
 
 const addToCart = (product) => {
-  const existingItem = productStore.getCart.find(
-    (item) => item.id === product.id
-  );
-
+  const existingItem = productStore.cart.find((item) => item.id === product.id);
   if (existingItem) {
     // If the item already exists in the cart, increment its quantity
     existingItem.quantity += quantity.value;
@@ -93,7 +108,13 @@ const addToCart = (product) => {
       quantity: quantity.value,
     });
   }
-  console.log(product, "add to cart product");
+
+  isVisible.value = true;
+  setTimeout(() => {
+    isVisible.value = false;
+  }, 3000); // 2000 milliseconds = 2 seconds
+
+  // console.log(product, "add to cart product");
 };
 
 const props = defineProps({
@@ -102,13 +123,4 @@ const props = defineProps({
   categoryProducts: Array,
   showAddToCart: Boolean,
 });
-
-const seeProductDetails = (productId) => {
-  console.log(productId.id);
-  // Use Vue Router to navigate to the ProductDetails page
-  router.push({
-    name: "product",
-    params: { product: productId.id },
-  });
-};
 </script>

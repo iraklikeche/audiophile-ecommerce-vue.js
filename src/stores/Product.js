@@ -1,10 +1,11 @@
-import { ref, computed, watch } from "vue";
+import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import data from "../data.json";
 
 export const useProductStore = defineStore("product", () => {
   const productData = ref(data);
   const showCart = ref(false);
+
 
   const cart = ref([]);
   const productIndex = computed(() => cart.value.length);
@@ -16,7 +17,7 @@ export const useProductStore = defineStore("product", () => {
   const addItemToCart = (product) => {
     cart.value.push(product);
     console.log(cart.value);
-  };
+    };
 
   const totalPrice = computed(() => {
     return cart.value.reduce((total, item) => {

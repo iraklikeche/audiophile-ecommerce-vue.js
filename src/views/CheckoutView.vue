@@ -235,18 +235,20 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import GoBackButton from "../components/GoBackButton.vue";
 import Modal from "../components/Modal.vue";
 import { useProductStore } from "../stores/Product";
-import { ref } from "vue";
+import { storeToRefs } from "pinia";
 
 const productStore = useProductStore();
+const { cart } = storeToRefs(productStore);
 const modalActive = ref(null);
 const toggleModal = () => {
   modalActive.value = !modalActive.value;
 };
 
-const cart = productStore.getCart;
+// const cart = productStore.getCart;
 
 const eMoneyRadio = ref(null);
 const cashOnDeliveryRadio = ref(null);
