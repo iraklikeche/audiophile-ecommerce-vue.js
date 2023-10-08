@@ -39,8 +39,8 @@
       </div>
 
       <div
-        class="flex flex-col md:items-center lg:flex-row absolute top-[13%] left-[50%] md:translate-x-[-50%] z-50 duration-700 ease-in-out lg:static gap-12 bg-[#0E0E0E] lg:gap-6 text-2xl lg:text-sm w-full lg:w-auto pl-8 lg:pl-0 h-full text-transform: uppercase font-bold text-white tracking-[1.5px]"
-        :class="isOpened ? 'top-[13%]' : 'top-[-100%]'"
+        class="flex flex-col md:items-center lg:flex-row absolute top-0 left-[50%] translate-x-[-50%] lg:transform lg:translate-x-0 z-50 duration-700 ease-in-out lg:static gap-12 bg-[#0E0E0E] lg:gap-6 text-2xl lg:text-sm w-full lg:w-auto pl-8 lg:pl-0 h-full text-transform: uppercase font-bold text-white tracking-[1.5px]"
+        :class="{ 'top-[-100%]': !isOpened }"
       >
         <div class="mb-6 mt-12 lg:hidden" @click="closeMenu">
           <svg
@@ -83,6 +83,7 @@ import { useRoute } from "vue-router";
 import { useProductStore } from "../stores/Product";
 
 const productStore = useProductStore();
+
 const isOpened = ref(false);
 
 const props = defineProps({
