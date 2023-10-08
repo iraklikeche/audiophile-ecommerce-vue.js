@@ -8,7 +8,13 @@
     >
       <div class="flex items-center gap-10">
         <div class="lg:hidden">
-          <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            width="16"
+            height="15"
+            xmlns="http://www.w3.org/2000/svg"
+            @click="openMenu"
+            class="cursor-pointer"
+          >
             <g fill="#FFF" fill-rule="evenodd">
               <path d="M0 0h16v3H0zM0 6h16v3H0zM0 12h16v3H0z" />
             </g>
@@ -33,12 +39,24 @@
       </div>
 
       <div
-        class="flex flex-col md:items-center lg:flex-row absolute top-[13%] left-[50%] md:translate-x-[-50%] lg:static gap-12 bg-red-500 lg:gap-6 text-2xl lg:text-sm w-full lg:w-auto pl-8 lg:pl-0 h-full text-transform: uppercase font-bold text-white tracking-[1.5px]"
+        class="flex flex-col md:items-center lg:flex-row absolute top-[13%] left-[50%] md:translate-x-[-50%] z-50 duration-700 ease-in-out lg:static gap-12 bg-[#0E0E0E] lg:gap-6 text-2xl lg:text-sm w-full lg:w-auto pl-8 lg:pl-0 h-full text-transform: uppercase font-bold text-white tracking-[1.5px]"
+        :class="isOpened ? 'top-[13%]' : 'top-[-100%]'"
       >
-        <!-- <div
-        class="md:items-center  "
-      > -->
-        <div class="mb-6 mt-12 lg:hidden">CLOSE</div>
+        <div class="mb-6 mt-12 lg:hidden" @click="closeMenu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="30"
+            height="30"
+            viewBox="0 0 50 50"
+            class="fill-white cursor-pointer"
+          >
+            <path
+              d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"
+            ></path>
+          </svg>
+        </div>
         <RouterLink
           :to="{ name: 'home' }"
           class="hover:text-[#D87D4A] transition-colors"
@@ -59,12 +77,13 @@
 </template>
 
 <script setup>
-import { computed, watch } from "vue";
+import { ref, computed, watch } from "vue";
 import data from "../data.json";
 import { useRoute } from "vue-router";
 import { useProductStore } from "../stores/Product";
 
 const productStore = useProductStore();
+const isOpened = ref(false);
 
 const props = defineProps({
   hasBorder: {
@@ -96,4 +115,12 @@ const uniqueCategories = computed(() => {
 
   return uniqueCategoriesArray;
 });
+
+const openMenu = () => {
+  isOpened.value = !isOpened.value;
+};
+
+const closeMenu = () => {
+  isOpened.value = false;
+};
 </script>
