@@ -60,12 +60,14 @@
         <RouterLink
           :to="{ name: 'home' }"
           class="hover:text-[#D87D4A] transition-colors"
+          @click="isOpened = false"
           >Home</RouterLink
         >
         <template v-for="(category, index) in uniqueCategories" :key="index">
           <RouterLink
             :to="category"
             class="hover:text-[#D87D4A] transition-colors"
+            @click="isOpened = false"
           >
             {{ category.params.category }}
           </RouterLink>
