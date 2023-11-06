@@ -25,6 +25,10 @@ const router = createRouter({
       component: () => import("../views/CheckoutView.vue"),
     },
   ],
+  scrollBehavior(to,from,savedPosition){
+    return savedPosition || {top:0}
+    // return {top:null,left:null,behavior:null}
+  }
 });
 
 export default router;
