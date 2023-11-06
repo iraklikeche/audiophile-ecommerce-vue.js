@@ -101,7 +101,7 @@ const isLinkEnabled = computed(() => {
             >
           </div>
 
-          <!-- <button class="" :disabled="isButtonDisabled"> -->
+
           <RouterLink
             v-if="isLinkEnabled"
             :to="{ name: 'checkout' }"
@@ -109,11 +109,32 @@ const isLinkEnabled = computed(() => {
           >
             Checkout
           </RouterLink>
-          <!-- </button> -->
+ 
         </div>
       </div>
     </Navbar>
-    <RouterView />
+
+
+  <RouterView v-slot="{ Component, route }">
+  <transition name="fade" mode="out-in">
+    <div :key="route.fullPath">  
+      <component :is="Component"></component>
+    </div>
+  </transition>
+</RouterView>
     <Footer />
   </div>
 </template>
+
+<style scoped>
+
+.fade-enter-from,
+.fade-leave-to{
+  opacity:0;
+}
+
+.fade-enter-active,
+.fade-leave-active{
+  transition: opacity 0.5s ease-out;
+}
+</style>
